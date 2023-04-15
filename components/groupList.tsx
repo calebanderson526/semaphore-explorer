@@ -68,7 +68,7 @@ export default function GroupList({
                             {groups.map((group, index) => (
                                 <tr key={group.id}>
                                     <td className='text-white'>{index + 1}</td>
-                                    <td className='text-white'><a href={`/group?id=${group.id}&chain=${chain}`} key={group.id}> {group.id} </a></td>
+                                    <td className='text-white'><a href={`/semaphore-explorer/group?id=${group.id}&chain=${chain}`} key={group.id}> {group.id} </a></td>
                                     <td className='text-white'>{group.verifiedProofs?.length ?? 0}</td>
                                     <td className='text-white'>{group.members?.length ?? 0}</td>
                                 </tr>
