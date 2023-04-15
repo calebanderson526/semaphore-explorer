@@ -56,7 +56,7 @@ const GroupDashboardPage = () => {
       <Container>
         <Row>
           <Col>
-            <Button variant="link" className='mt-2' onClick={() => router.push('/')}>Home</Button>
+            <Button variant="link" className='mt-2' onClick={() => router.push('/semaphore-explorer')}>Home</Button>
           </Col>
         </Row>
         <Row>
