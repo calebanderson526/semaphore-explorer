@@ -25,7 +25,7 @@ const SemaphoreExplorer = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    router.push(`/semaphore-explorer/group?chain=${chain}&group=${id}`);
+    router.push(`/group?chain=${chain}&group=${id}`);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

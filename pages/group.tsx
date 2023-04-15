@@ -60,7 +60,7 @@ const GroupDashboardPage = () => {
             <Button
               variant="link"
               className="mt-2"
-              onClick={() => router.push("/semaphore-explorer")}
+              onClick={() => router.push("/")}
             >
               Home
             </Button>
