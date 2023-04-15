@@ -1,4 +1,4 @@
-# On-Chain explorer meant for use with the semaphore subgraph
+# On-Chain explorer using the semaphore subgraph
 
 Uses the `SemaphoreSubgraph` class of the [`@semaphore-protocol/data`](https://github.com/semaphore-protocol/semaphore/tree/main/packages/data) library.
 
