@@ -11,14 +11,14 @@ const SemaphoreExplorer = () => {
   const [groups, setGroups] = useState<GroupResponse[]>([])
   const router = useRouter();
 
-  var subgraph = new SemaphoreSubgraph(chain)
+  
 
   useEffect(() => {
+    var subgraph = new SemaphoreSubgraph(chain)
     const fetchGroups = async () => {
       const groupsRes = await subgraph.getGroups({ verifiedProofs: true, members: true })
       setGroups(groupsRes)
     }
-    console.log(chain)
     fetchGroups()
   }, [chain])
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Row, Col, Table, Button } from 'react-bootstrap';
 import { SemaphoreSubgraph, GroupResponse } from '@semaphore-protocol/data';
 import { useRouter } from 'next/router';
 
@@ -10,8 +10,8 @@ const GroupDashboardPage = () => {
   const [groupNotFound, setGroupNotFound] = useState(false)
 
   // Use SemaphoreSubgraph to fetch group data based on chain and ID
-  const semaphoreSubgraph = new SemaphoreSubgraph(chain as string);
   useEffect(() => {
+    const semaphoreSubgraph = new SemaphoreSubgraph(chain as string);
     const fetchGroup = async () => {
       const semaphoreGroup: GroupResponse = await semaphoreSubgraph.getGroup(`${id}`, { verifiedProofs: true, members: true });
       if (!semaphoreGroup) {
@@ -22,7 +22,7 @@ const GroupDashboardPage = () => {
     if (chain != undefined && id != undefined) {
       fetchGroup()
     }
-  }, [chain])
+  }, [chain, id])
 
 
   if (groupNotFound) {
@@ -55,7 +55,9 @@ const GroupDashboardPage = () => {
     <div className='root bg-dark text-white'>
       <Container>
         <Row>
-          <a className='mt-2' href='/'>Home</a>
+          <Col>
+            <Button variant="link" className='mt-2' onClick={() => router.push('/')}>Home</Button>
+          </Col>
         </Row>
         <Row>
           <Col>
